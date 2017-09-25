@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'login/css/style.css' %}">
+    <title>Login and Registration</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <form action="register/" method="post">
+        {% csrf_token %}
+        {% if messages %}
+        <ul class="messages">
+          {% for error in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ error }}</li>
+          {% endfor %}
+        </ul>
+          {% endif %}
+
+        <label>First Name:<input type="text" name="first_name"></label>
+        <label>Last Name:<input type="text" name="last_name"></label>
+        <label>Email:<input type="text" name="email"></label>
+        <label>Password:<input type="text" name="password"></label>
+        <label>Confirm Password:<input type="text" name="password_confirm"></label>
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+    </div>
+    <div class="container">
+      <h1>Login</h1>
+      <form action="login/" method="post">
+        {% csrf_token %}
+        <label>Email:<input type="text" name="email"></label>
+        <label>Password:<input type="text" name="password"></label>
+        <button class="btn btn-primary" type="submit">Login</button>
+  </body>
+</html>

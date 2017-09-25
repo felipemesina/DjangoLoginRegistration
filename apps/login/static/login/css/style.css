@@ -1,0 +1,26 @@
+label{
+  display: block;
+}
+
+
+input {
+  display: block;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+body{
+  background-color: lightgrey;
+}
+
+div{
+  padding: 40px;
+}
+
+h1{
+  color: #368DD8;
+}
+
+button{
+  box-shadow: 2px 2px 5px #A5A5A5;
+}
